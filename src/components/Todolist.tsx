@@ -38,7 +38,7 @@ export function Todolist(props: TodolistPropsType)  {
                 </div>
                 {tasksList}
                 <div>
-                    <button>All</button>
+                    <button>All Tasks</button>
                     <button>Active</button>
                     <button>Completed</button>
                 </div>
