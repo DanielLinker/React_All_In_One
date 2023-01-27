@@ -1,6 +1,6 @@
 import React from "react";
 import './Todolist.css'
-import {MdAddTask} from "react-icons/md";
+import {MdAddTask, MdDeleteForever} from "react-icons/md";
 import {TaskType} from "../App";
 
 
@@ -22,7 +22,9 @@ export function Todolist(props: TodolistPropsType)  {
                 <li key={T.id}>
                     <input type="checkbox" checked={T.isDone}/>
                     <span>{T.title}</span>
-                    <button onClick={() => props.removeTasks(T.id)}>X</button>
+                    <button onClick={() => props.removeTasks(T.id)}>
+                        <MdDeleteForever className="delete" />
+                    </button>
                 </li>
             )
     })
@@ -34,7 +36,7 @@ export function Todolist(props: TodolistPropsType)  {
                 <h3>{props.title}</h3>
                 <div>
                     <input placeholder={"Add Tasks"}/>
-                    <button>Hinzufügen
+                    <button>Add new tasks
                         <MdAddTask/>
                     </button>
                 </div>
