@@ -13,14 +13,16 @@ function App() {
 
   const todoListTitle: string = 'Einkaufsliste'
 
-  let tasksForTodoList: Array<TaskType> = [
+  const [tasksForTodoList, setTasksForTodoList] = React.useState<Array<TaskType>> ([
     {id: 1, title: 'HTML&CSS', isDone: true, },
     {id: 2, title: 'JS', isDone: true, },
     {id: 3, title: 'React', isDone: false, },
-  ]
+  ])
+
+
 
   const removeTasks = (tasksId: number) => {
-    tasksForTodoList = tasksForTodoList.filter(tasks => tasks.id !== tasksId);
+    setTasksForTodoList(tasksForTodoList.filter(tasks => tasks.id !== tasksId));
   }
 
 
