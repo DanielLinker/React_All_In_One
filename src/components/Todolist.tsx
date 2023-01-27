@@ -7,6 +7,7 @@ import {TaskType} from "../App";
 type TodolistPropsType = {
     title:string
     tasks: Array<TaskType>
+   removeTasks: (tasksId: number) => void
 }
 export function Todolist(props: TodolistPropsType)  {
 
@@ -21,6 +22,7 @@ export function Todolist(props: TodolistPropsType)  {
                 <li key={T.id}>
                     <input type="checkbox" checked={T.isDone}/>
                     <span>{T.title}</span>
+                    <button onClick={() => alert(T.id)}>Add</button>
                 </li>
             )
     })
