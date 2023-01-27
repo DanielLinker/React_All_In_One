@@ -22,7 +22,7 @@ export function Todolist(props: TodolistPropsType)  {
                 <li key={T.id}>
                     <input type="checkbox" checked={T.isDone}/>
                     <span>{T.title}</span>
-                    <button onClick={() => alert(T.id)}>Add</button>
+                    <button onClick={() => props.removeTasks(T.id)}>X</button>
                 </li>
             )
     })
